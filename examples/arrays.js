@@ -28,7 +28,10 @@ fruits.forEach(fruit => {
 // Iterate and transform the 'fruits' array with .map
 console.log('Show fruits in uppercase');
 const fruitsInUppercase = fruits.map(fruit => fruit.toUpperCase());
+<<<<<<< HEAD
 
+=======
+>>>>>>> examples
 console.log(fruitsInUppercase);
 
 // Add values to the beginning of the array
