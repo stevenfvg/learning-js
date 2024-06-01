@@ -45,11 +45,11 @@ console.log('Hello World!');
 
 | # | Project | Code | link |
 | --- | --- | --- | --- |
-| `01` | Shopping Cart | [view]() | [visit]() |
+| `01` | LMS | [view]() | [visit]() |
 | `02` | Email sending simulator | [view]() | [visit]() |
 | `03` | Filter and Search | [view]() | [visit]() |
 | `04` | Store Texts in LocalStorage | [view]() | [visit]() |
-| `05` | Shopping Cart with LocalStorage | [view]() | [visit]() |
+| `05` | LMS with LocalStorage | [view]() | [visit]() |
 | `06` | Car insurance quote | [view]() | [visit]() |
 | `07` | Budget Management | [view]() | [visit]() |
 | `08` | Appointment Manager | [view]() | [visit]() |
