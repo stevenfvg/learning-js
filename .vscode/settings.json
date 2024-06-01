@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "setting",
-        "example"
+        "example",
+        "project"
     ]
 }
