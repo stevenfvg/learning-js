@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "img": "../dist/assets/images/course/course-angular.jpg",
+        "difficulty": "Beginner",
+        "description": "Angular - the complete guide for beginner",
+        "instructor": "Jeffrey McCoy",
+        "reputation": "(8,890)",
+        "price": 49
+
+    },
+    {
+        "id": 2,
+        "img": "../dist/assets/images/course/course-bootstrap.jpg",
+        "difficulty": "Beginner",
+        "description": "An Ultimate Guide for Beginners Bootstrap 5",
+        "instructor": "Morris Mccoy",
+        "reputation": "(9,300)",
+        "price": 10
+    },
+    {
+        "id": 3,
+        "img": "../dist/assets/images/course/course-css.jpg",
+        "difficulty": "Beginner",
+        "description": "CSS: ultimate CSS course from beginner to advanced",
+        "instructor": "Carolyn Welborn",
+        "reputation": "(8,890)",
+        "price": 30
+    },
+    {
+        "id": 4,
+        "img": "../dist/assets/images/course/course-gatsby.jpg",
+        "difficulty": "Intermediate",
+        "description": "The Gatsby Course: build web application",
+        "instructor": "Floyd Amall",
+        "reputation": "(13,245)",
+        "price": 34
+    },
+    {
+        "id": 5,
+        "img": "../dist/assets/images/course/course-graphql.jpg",
+        "difficulty": "Beginner",
+        "description": "GraphQL: introduction to graphQL for beginners",
+        "instructor": "Michael Cundiff",
+        "reputation": "(9,300)",
+        "price": 0
+    },
+    {
+        "id": 6,
+        "img": "../dist/assets/images/course/course-grunt.jpg",
+        "difficulty": "Beginner",
+        "description": "Introduction to GRUNT js",
+        "instructor": "Matt Jones",
+        "reputation": "(8,894)",
+        "price": 13
+    },
+    {
+        "id": 7,
+        "img": "../dist/assets/images/course/course-html.jpg",
+        "difficulty": "Beginner",
+        "description": "Introduction to HTML",
+        "instructor": "Carlos Vander",
+        "reputation": "(9,500)",
+        "price": 0
+    },
+    {
+        "id": 8,
+        "img": "../dist/assets/images/course/course-javascript.jpg",
+        "difficulty": "Intermediate",
+        "description": "How to easily create a website with JavaScript",
+        "instructor": "Claire Evans",
+        "reputation": "(9,300)",
+        "price": 39
+    },
+    {
+        "id": 9,
+        "img": "../dist/assets/images/course/course-laravel.jpg",
+        "difficulty": "Advance",
+        "description": "Professional PHP course with Laravel",
+        "instructor": "Victor Robles",
+        "reputation": "(9,900)",
+        "price": 80
+    },
+    {
+        "id": 10,
+        "img": "../dist/assets/images/course/course-node.jpg",
+        "difficulty": "Beginner",
+        "description": "Node.js Tutorials - For beginners and professionals",
+        "instructor": "Morris Mccoy",
+        "reputation": "(12,245)",
+        "price": 55
+    },
+    {
+        "id": 11,
+        "img": "../dist/assets/images/course/course-python.jpg",
+        "difficulty": "Beginner",
+        "description": "The Python Course: build web application",
+        "instructor": "Douglas Howell",
+        "reputation": "(13,245)",
+        "price": 19
+    },
+    {
+        "id": 12,
+        "img": "../dist/assets/images/course/course-react.jpg",
+        "difficulty": "Intermediate",
+        "description": "How to easily create a website with React",
+        "instructor": "Morris Mccoy",
+        "reputation": "(7,700)",
+        "price": 29
+    },
+    {
+        "id": 13,
+        "img": "../dist/assets/images/course/course-sass.jpg",
+        "difficulty": "Beginner",
+        "description": "Web Development with SASS",
+        "instructor": "Morris Mccoy",
+        "reputation": "(7,700)",
+        "price": 0
+    },
+    {
+        "id": 14,
+        "img": "../dist/assets/images/course/course-vue.jpg",
+        "difficulty": "Intermediate",
+        "description": "Learn Vue from scratch",
+        "instructor": "Victor Robles",
+        "reputation": "(9,855)",
+        "price": 45
+    },
+    {
+        "id": 15,
+        "img": "../dist/assets/images/course/course-wordpress.jpg",
+        "difficulty": "Advance",
+        "description": "WordPress: introduction to wordpress for beginners",
+        "instructor": "Victor Elliott",
+        "reputation": "(9,300)",
+        "price": 39
+    }
+]
