@@ -36,14 +36,14 @@ console.log('Hello World!');
 | --- | --- | --- |
 | `01` | Get elements from the DOM | [view](examples/dom/js/getElements.js) |
 | `02` | Modify DOM elements | [view](examples/dom/js/modifyElements.js) |
-| `03` | Traviewsing the DOM | [view](examples/dom/js/traviewsingTheDom.js) |
+| `03` | Traversing the DOM | [view](examples/dom/js/traversingTheDom.js) |
 | `04` | Remove elements from the DOM | [view](examples/dom/js/removeElements.js) |
 | `05` | Generate HTML with JavaScript | [view](examples/dom/js/generateHTML.js) |
 | `06` | Events | [view](examples/events/script.js) |
 
 ## ⌨️ Projects with code
 
-| # | Project | Code | link |
+| # | Project | Code | Link |
 | --- | --- | --- | --- |
 | `01` | LMS | [view]() | [visit]() |
 | `02` | Email sending simulator | [view]() | [visit]() |
