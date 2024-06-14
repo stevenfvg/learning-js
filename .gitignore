@@ -155,3 +155,8 @@ out
 # Ignore all local history of files
 .history
 .ionide
+
+# Ignore image files with :Zone.Identifier in any location
+*.svg:Zone.Identifier
+*.png:Zone.Identifier
+*.jpeg:Zone.Identifier
