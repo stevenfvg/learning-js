@@ -1,21 +1,46 @@
 export default function hero() {
     return `
-        <section class="bg-primary">
-            <div class="container">
-                <!-- Hero Section -->
-                <div class="row align-items-center no-gutters">
-                    <div class="col-xl-5 col-lg-6 col-md-12">
-                        <div class="py-5 py-lg-0">
-                            <h1 class="text-white display-4 fw-bold">Welcome to Geeks UI Learning Application</h1>
-                            <p class="text-white-50 mb-4 lead">
-                                Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
-                            </p>
-                            <a href="#" class="btn btn-success disabled">Browse Courses</a>
-                            <a href="#" class="btn btn-white disabled">Are You Instructor?</a>
+        <!-- Hero Section -->
+        <section class="py-md-8 py-6"
+            style="background-image: url(./../../public/dist/assets/images/mentor/mentor-glow.svg); background-repeat: no-repeat; background-size: container">
+            <div class="container py-lg-6">
+                <!-- row -->
+                <div class="row align-items-center gy-4 justify-content-center">
+                    <div class="col-xxl-5 col-xl-6 col-md-10">
+                        <div class="d-flex flex-column gap-5 text-center">
+                            <div class="d-flex flex-column gap-2">
+                                <span class="text-dark fs-5">Learn a new skill, launch a project, land your dream
+                                career.</span>
+                                <!-- heading -->
+                                <h1 class="mb-0 display-2 fw-bold">
+                                    <span>1-on-1</span>
+                                    <span class=" text-primary"
+                                        data-strings="Javascript, Startup, React, Marketing, Branding"></span>
+                                    <div>Mentorship</div>
+                                </h1>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <!-- form -->
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control form-control-lg"
+                                            placeholder="Search by Skills" aria-label="Search by Skills"
+                                            aria-describedby="basic-addon2" />
+                                        <button class="btn btn-primary btn-lg" id="basic-addon2">Find mentors</button>
+                                    </div>
+                                </form>
+
+                                <div class="gap-2 d-flex flex-wrap justify-content-center">
+                                    <a href="#!" class="btn btn-tag btn-sm">Frontend</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">Devops</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">UI/UX designer</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">Data Science</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">Full Stack</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">Backend</a>
+                                    <a href="#!" class="btn btn-tag btn-sm">Data Analyst</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class=" col-xl-7 col-lg-6 col-md-12 text-lg-right text-center">
-                        <img src="../public/dist/assets/images/hero/hero-img.png" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
