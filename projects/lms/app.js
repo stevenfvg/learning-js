@@ -18,10 +18,10 @@ export function getElementsFromDom(elements) {
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="badge bg-${course.classBadge}-soft">${course.difficulty}</span>
-                            <a href="#" class="fs-5"><i class="fe fe-heart align-middle"></i></a>
+                            <a href="#!" class="fs-5"><i class="fe fe-heart align-middle"></i></a>
                         </div>
                         <h4 class="mb-2 text-truncate-line-2 ">
-                            <a href="#" class="text-inherit">
+                            <a href="#!" class="text-inherit">
                                 ${course.description}
                             </a>
                         </h4>
@@ -73,7 +73,7 @@ export function getElementsFromDom(elements) {
                                 </h5>
                             </div>
                             <div class="col-auto">
-                                <a href="#" class="text-inherit">
+                                <a href="#!" class="text-inherit" data-id="${course.id}">
                                     <i class="fe fe-shopping-cart text-primary  me-2"></i>Add to Cart
                                 </a>
                             </div>
