@@ -2,7 +2,7 @@ import courses from './public/data/courses.json';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
-    const [courseList] = elements;
+    const [cart, cartContainer, emptyCartButton, courseList] = elements;
 
     // Function that renders the courses in a <div> with the "card" class.
     const showCourses = (element, data) => {

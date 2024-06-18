@@ -17,7 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ${Footer()}
     `;
 
-    const elements = [document.querySelector('#course-list')];
+    const elements = [
+        document.querySelector('#shoppingCart'),
+        document.querySelector('#shoppingCart-list'),
+        document.querySelector('#empty-shoppingCart'),
+        document.querySelector('#course-list'),
+    ];
 
     getElementsFromDom(elements);
 });
