@@ -1,4 +1,5 @@
 export default function footer() {
+    const currentYear = new Date().getFullYear();
     return `
         <!-- footer -->
         <footer class="pt-lg-10 pt-5 footer bg-white">
@@ -66,7 +67,7 @@ export default function footer() {
                         <div class="mb-4">
                             <h3 class="fw-bold mb-3">Get in touch</h3>
                             <p>339 McDermott Points Hettingerhaven, NV 15283</p>
-                            <p class="mb-1">Email: <a href="!#">support@geeksui.com</a></p>
+                            <p class="mb-1">Email: <a href="#!">support@geeksui.com</a></p>
                             <p>Phone: <span class="text-dark fw-semibold">(000) 123 456 789</span></p>
                             <div class="d-flex">
                                 <!-- <a href=""><img src="../public/dist/assets/images/svg/appstore.svg" alt="" class="img-fluid"></a> -->
@@ -80,9 +81,7 @@ export default function footer() {
                     <div class="col-md-10 col-12">
                         <div class="d-lg-flex align-items-center">
                             <div class="me-4">
-                                <span>© <span id="copyright5">
-                                    <script>document.getElementById('copyright5').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-                                </span> Geeks-UI</span>
+                                <span>© <span id="copyright5">${currentYear}</span> Geeks</span>
                             </div>
                             <div>
                                 <nav class="nav nav-footer">
