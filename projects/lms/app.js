@@ -3,6 +3,8 @@ import courses from './public/data/courses.json';
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
     const [cart, cartContainer, emptyCartButton, courseList] = elements;
+    // Array to store courses added to the shopping cart.
+    let coursesAddedToCart = [];
 
     // Function that renders the courses in a <div> with the "card" class.
     const showCourses = (element, data) => {
@@ -21,9 +23,9 @@ export function getElementsFromDom(elements) {
                             <a href="#!" class="fs-5"><i class="fe fe-heart align-middle"></i></a>
                         </div>
                         <h4 class="mb-2 text-truncate-line-2 ">
-                            <a href="#!" class="text-inherit">
-                                ${course.description}
-                            </a>
+                            <a href="#!" class="text-inherit" id="title">${
+                                course.description
+                            }</a>
                         </h4>
                         <small>By: ${course.instructor}</small>
                         <div class="mt-3 d-flex align-baseline lh-1">
@@ -62,18 +64,19 @@ export function getElementsFromDom(elements) {
                     <div class="card-footer">
                         <div class="row align-items-center g-0">
                             <div class="col">
-                                <h5 class="mb-0">${course.price.toLocaleString(
+                                <h5 class="mb-0" id="price">${course.price.toLocaleString(
                                     'en-US',
-                                        {
-                                            style: 'currency',
-                                            currency: 'USD',
-                                            minimumFractionDigits: 2,
-                                        }
-                                    )}
-                                </h5>
+                                    {
+                                        style: 'currency',
+                                        currency: 'USD',
+                                        minimumFractionDigits: 2,
+                                    }
+                                )}</h5>
                             </div>
                             <div class="col-auto">
-                                <a href="#!" class="text-inherit" data-id="${course.id}">
+                                <a href="#" class="text-inherit add-to-cart" data-id="${
+                                    course.id
+                                }">
                                     <i class="fe fe-shopping-cart text-primary  me-2"></i>Add to Cart
                                 </a>
                             </div>
@@ -86,5 +89,108 @@ export function getElementsFromDom(elements) {
         });
     };
 
+    // Feature to load event listeners to interact with the course list and shopping cart.
+    const loadEventListeners = () => {
+        // Add an event listener to the course list to handle clicks and adding courses to the shopping cart.
+        courseList.addEventListener('click', addCourseToCart);
+        // Add an event listener to the shopping cart to handle clicks and remove courses from the cart.
+        cart.addEventListener('click', removeCourseFromCart);
+        // Add an event listener to the "Empty Cart" button to handle clicks and remove all courses from the shopping cart.
+        emptyCartButton.addEventListener('click', () => {
+            // Se reacciona un arreglo vacio a la variable coursesAddedToCart.
+            // Then remove duplicate courses from the cart.
+            coursesAddedToCart = [];
+            removeDuplicateCoursesInCart();
+        });
+    };
+
+    // This function is executed when a course is clicked to add to cart.
+    const addCourseToCart = e => {
+        e.preventDefault();
+        // Checks if the clicked item has class 'add-to-cart'.
+        if (e.target.classList.contains('add-to-cart')) {
+            const selectedCourse = e.target.closest('.card');
+            // The getCourse Data function is called to get the course data.
+            getCourseData(selectedCourse);
+        }
+    };
+
+    // Removes a course from the shopping cart when the Delete button is clicked.
+    const removeCourseFromCart = e => {
+        e.preventDefault();
+        // Check if the clicked element has class 'fe-x'.
+        if (e.target.classList.contains('fe-x')) {
+            // Get the unique identifier of the course to be deleted.
+            const courseIdentifier = e.target.parentElement.getAttribute('data-id');
+            // Filters the course with the matching identifier to the coursesAddedToCart array.
+            coursesAddedToCart = coursesAddedToCart.filter(
+                course => course.id !== courseIdentifier
+            );
+            // Updates the list of courses displayed in the shopping cart.
+            listCoursesInCart();
+        }
+    };
+
+    // This function gets the data from the selected course and stores it in an object.
+    const getCourseData = course => {
+        const courseData = {
+            img: course.querySelector('img').src,
+            title: course.querySelector('#title').textContent,
+            price: course.querySelector('#price').textContent,
+            id: course.querySelector('.add-to-cart').getAttribute('data-id'),
+        };
+
+        // Check if an item already exists in the shopping cart.
+        const courseExistsInCart = coursesAddedToCart.some(
+            course => course.id === courseData.id
+        );
+
+        if (courseExistsInCart) {
+            // Checks if the course already exists in the shopping cart.
+            const courses = coursesAddedToCart.map(course => {
+                if (course.id === courseData.id) {
+                    alert('The course is already added to the cart');
+                    return course; // Return the updated object.
+                } else {
+                    return course; // Returns an object with no duplicate elements.
+                }
+            });
+            coursesAddedToCart = [...courses];
+        } else {
+            coursesAddedToCart = [...coursesAddedToCart, courseData];
+        }
+        
+        listCoursesInCart();
+    };
+
+    // List the courses in the shopping cart, removing duplicates and displaying the data for each course.
+    const listCoursesInCart = () => {
+        removeDuplicateCoursesInCart();
+        coursesAddedToCart.forEach(course => {
+            const { img, title, price, id } = course;
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="mx-0 pe-1"><img src="${img}" class="rounded img-4by3-sm" /></td>
+                <td class="mx-0 px-2 align-middle">${title}</td>
+                <td class="mx-0 px-2 align-middle">${price}</td>
+                <td class="align-middle">
+                    <a href="#" class="link-secondary" data-id="${id}"><i class="fe fe-x"></i></a>
+                </td>
+            `;
+
+            // Adds the course data to the shopping cart container.
+            cartContainer.appendChild(row);
+        });
+    };
+
+    // Remove duplicate courses from the shopping cart.
+    // This is achieved by removing all children of the cart container.
+    const removeDuplicateCoursesInCart = () => {
+        while (cartContainer.firstChild) {
+            cartContainer.removeChild(cartContainer.firstChild);
+        }
+    };
+
     showCourses(courseList, courses);
+    loadEventListeners();
 }

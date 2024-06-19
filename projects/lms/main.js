@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const elements = [
         document.querySelector('#shoppingCart'),
-        document.querySelector('#shoppingCart-list'),
+        document.querySelector('#shoppingCart-list tbody'),
         document.querySelector('#empty-shoppingCart'),
         document.querySelector('#course-list'),
     ];
