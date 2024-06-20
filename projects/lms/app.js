@@ -168,18 +168,33 @@ export function getElementsFromDom(elements) {
         removeDuplicateCoursesInCart();
         coursesAddedToCart.forEach(course => {
             const { img, title, price, id } = course;
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td class="mx-0 pe-1"><img src="${img}" class="rounded img-4by3-sm" /></td>
-                <td class="mx-0 px-2 align-middle">${title}</td>
-                <td class="mx-0 px-2 align-middle">${price}</td>
-                <td class="align-middle">
-                    <a href="#" class="link-secondary" data-id="${id}"><i class="fe fe-x"></i></a>
-                </td>
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.innerHTML = `
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex">
+                            <img src="${img}" class="rounded img-4by3-md" />
+                            <div class="ms-3">
+                                <h5 class="fw-bold">${title}</h5>
+                                <span class="fs-5">
+                                    <span>${price}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto text-center me-2">
+                        <div>
+                            <a href="#!" class="bg-transparent" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove" data-id="${id}">
+                                <i class="fe fe-x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             `;
 
             // Adds the course data to the shopping cart container.
-            cartContainer.appendChild(row);
+            cartContainer.appendChild(listItem);
         });
     };
 

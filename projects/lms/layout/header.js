@@ -48,8 +48,7 @@ export default function header() {
                                 aria-expanded="false">
                                 <i class="fe fe-shopping-cart align-middle"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg position-absolute mx-3 my-5"
-                                aria-labelledby="dropdownShoppingCart">
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg position-absolute w-auto mx-3 my-5" aria-labelledby="dropdownNotificationSecond">
                                 <div id="shoppingCart">
                                     <div class="border-bottom px-3 pb-3 d-flex justify-content-between align-items-center">
                                         <span class="h5 mb-0">Shopping Cart</span>
@@ -59,10 +58,7 @@ export default function header() {
                                             </span>
                                         </a>
                                     </div>
-                                    <table class="table" id="shoppingCart-list">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
+                                    <ul class="list-group list-group-flush" style="height: auto;" id="shoppingCart-list" data-simplebar></ul>
                                     <div class="border-top px-3 pt-3 pb-0">
                                         <a href="#" class="btn btn-white w-100" id="empty-shoppingCart" >
                                             Empty cart <i class="fe fe-trash-2 me-1"></i>
@@ -71,11 +67,14 @@ export default function header() {
                                 </div>
                             </div>
                         </li>
+                        <li class="dropdown ms-2 d-inline-block position-static">
+                            <a class="rounded-circle" href="#!" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                <div class="avatar avatar-md avatar-online">
+                                    <img alt="avatar" src="../public/dist/assets/images/avatar/avatar.jpg" class="rounded-circle" />
+                                </div>
+                            </a>
+                        </li>
                     </ul>
-                    <div class="d-flex align-items-center ms-2">
-                        <a href="#!" class="btn btn-outline-primary shadow-sm me-1 disabled">Sign In</a>
-                        <a href="#!" class="btn btn-primary d-none d-md-block disabled">Sign Up</a>
-                    </div>
                 </div>
             </div>
         </nav>
