@@ -179,3 +179,6 @@ out
 
 # Local Netlify folder
 .netlify
+
+#
+dist
