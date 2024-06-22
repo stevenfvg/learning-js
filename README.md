@@ -45,7 +45,7 @@ console.log('Hello World!');
 
 | # | Project | Code | Link |
 | --- | --- | --- | --- |
-| `01` | LMS | [view]() | [visit]() |
+| `01` | LMS | [view](projects/lms/) | [visit](https://lms-example.netlify.app/) |
 | `02` | Email sending simulator | [view]() | [visit]() |
 | `03` | Filter and Search | [view]() | [visit]() |
 | `04` | Store Texts in LocalStorage | [view]() | [visit]() |
