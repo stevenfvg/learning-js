@@ -47,6 +47,8 @@ export default function header() {
                                 data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <i class="fe fe-shopping-cart align-middle"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary fs-6 visually-hidden" 
+                                id="itemsInShoppingCart"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg position-absolute w-auto mx-3 my-5" aria-labelledby="dropdownNotificationSecond">
                                 <div id="shoppingCart">

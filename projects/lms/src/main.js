@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     const elements = [
+        document.querySelector('#itemsInShoppingCart'),
         document.querySelector('#shoppingCart'),
         document.querySelector('#shoppingCart-list'),
         document.querySelector('#empty-shoppingCart'),

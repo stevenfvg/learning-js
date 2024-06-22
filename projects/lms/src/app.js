@@ -3,7 +3,7 @@ import courses from '../public/data/courses.json';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
-    const [cart, cartContainer, emptyCartButton, courseList] = elements;
+    const [itemsInCart ,cart, cartContainer, emptyCartButton, courseList] = elements;
     // Array to store courses added to the shopping cart.
     let coursesAddedToCart = [];
 
@@ -102,6 +102,13 @@ export function getElementsFromDom(elements) {
             // Then remove duplicate courses from the cart.
             coursesAddedToCart = [];
             removeDuplicateCoursesInCart();
+
+            // Check if coursesAddedToCart exists (is not null or undefined).
+            if (coursesAddedToCart) {
+                // If coursesAddedToCart exists, add the 'visually-hidden' class to the itemsInCart element.
+                // This hides the badge, regardless of the number of items in the cart.
+                itemsInCart.classList.add('visually-hidden');
+            } 
         });
     };
 
@@ -122,13 +129,25 @@ export function getElementsFromDom(elements) {
         // Check if the clicked element has class 'fe-x'.
         if (e.target.classList.contains('fe-x')) {
             // Get the unique identifier of the course to be deleted.
-            const courseIdentifier = e.target.parentElement.getAttribute('data-id');
+            const courseIdentifier =
+                e.target.parentElement.getAttribute('data-id');
             // Filters the course with the matching identifier to the coursesAddedToCart array.
             coursesAddedToCart = coursesAddedToCart.filter(
                 course => course.id !== courseIdentifier
             );
             // Updates the list of courses displayed in the shopping cart.
             listCoursesInCart();
+
+            // Check if the length of coursesAddedToCart is not equal to 0.
+            if (coursesAddedToCart.length !== 0) {
+                // If there are courses in the cart, update the text content of the itemsInCart element.
+                // This sets the badge to display the number of courses in the shopping cart.
+                itemsInCart.textContent = coursesAddedToCart.length;
+            } else {
+                // If there are no courses in the cart, add the 'visually-hidden' class to the itemsInCart element.
+                // This hides the badge since there are no items to display
+                itemsInCart.classList.add('visually-hidden');
+            }
         }
     };
 
@@ -162,6 +181,14 @@ export function getElementsFromDom(elements) {
         }
         
         listCoursesInCart();
+        
+        // Remove the 'visually-hidden' class from the element.
+        // This makes the element visible if it was previously hidden.
+        itemsInCart.classList.remove('visually-hidden');
+
+        // Set the content of the element to the number of courses added to the cart.
+        // This updates the badge to display the count of items in the shopping cart.
+        itemsInCart.textContent = coursesAddedToCart.length;
     };
 
     // List the courses in the shopping cart, removing duplicates and displaying the data for each course.
