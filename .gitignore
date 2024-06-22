@@ -176,3 +176,6 @@ out
 *.vue:Zone.Identifier
 *.woff:Zone.Identifier
 *.woff2:Zone.Identifier
+
+# Local Netlify folder
+.netlify
