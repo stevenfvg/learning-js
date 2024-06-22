@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "img": "../dist/assets/images/course/course-angular.jpg",
+        "img": "../assets/images/course/course-angular.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "Angular - the complete guide for beginner",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "img": "../dist/assets/images/course/course-bootstrap.jpg",
+        "img": "../assets/images/course/course-bootstrap.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "An Ultimate Guide for Beginners Bootstrap 5",
@@ -22,7 +22,7 @@
     },
     {
         "id": 3,
-        "img": "../dist/assets/images/course/course-css.jpg",
+        "img": "../assets/images/course/course-css.jpg",
         "classBadge": "danger",
         "difficulty": "Advance",
         "description": "CSS: ultimate CSS course from beginner to advanced",
@@ -32,7 +32,7 @@
     },
     {
         "id": 4,
-        "img": "../dist/assets/images/course/course-gatsby.jpg",
+        "img": "../assets/images/course/course-gatsby.jpg",
         "classBadge": "danger",
         "difficulty": "Advance",
         "description": "The Gatsby Course: build web application",
@@ -42,7 +42,7 @@
     },
     {
         "id": 5,
-        "img": "../dist/assets/images/course/course-graphql.jpg",
+        "img": "../assets/images/course/course-graphql.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "GraphQL: introduction to graphQL for beginners",
@@ -52,7 +52,7 @@
     },
     {
         "id": 6,
-        "img": "../dist/assets/images/course/course-grunt.jpg",
+        "img": "../assets/images/course/course-grunt.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "Introduction to GRUNT js",
@@ -62,7 +62,7 @@
     },
     {
         "id": 7,
-        "img": "../dist/assets/images/course/course-html.jpg",
+        "img": "../assets/images/course/course-html.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "Introduction to HTML",
@@ -72,7 +72,7 @@
     },
     {
         "id": 8,
-        "img": "../dist/assets/images/course/course-javascript.jpg",
+        "img": "../assets/images/course/course-javascript.jpg",
         "classBadge": "info",
         "difficulty": "Intermediate",
         "description": "How to easily create a website with JavaScript",
@@ -82,7 +82,7 @@
     },
     {
         "id": 9,
-        "img": "../dist/assets/images/course/course-laravel.jpg",
+        "img": "../assets/images/course/course-laravel.jpg",
         "classBadge": "danger",
         "difficulty": "Advance",
         "description": "Professional PHP course with Laravel",
@@ -92,7 +92,7 @@
     },
     {
         "id": 10,
-        "img": "../dist/assets/images/course/course-node.jpg",
+        "img": "../assets/images/course/course-node.jpg",
         "classBadge": "info",
         "difficulty": "Intermediate",
         "description": "Node.js Tutorials - For beginners and professionals",
@@ -102,7 +102,7 @@
     },
     {
         "id": 11,
-        "img": "../dist/assets/images/course/course-python.jpg",
+        "img": "../assets/images/course/course-python.jpg",
         "classBadge": "danger",
         "difficulty": "Advance",
         "description": "The Python Course: build web application",
@@ -112,7 +112,7 @@
     },
     {
         "id": 12,
-        "img": "../dist/assets/images/course/course-react.jpg",
+        "img": "../assets/images/course/course-react.jpg",
         "classBadge": "info",
         "difficulty": "Intermediate",
         "description": "How to easily create a website with React",
@@ -122,7 +122,7 @@
     },
     {
         "id": 13,
-        "img": "../dist/assets/images/course/course-sass.jpg",
+        "img": "../assets/images/course/course-sass.jpg",
         "classBadge": "info",
         "difficulty": "Intermediate",
         "description": "Web Development with SASS",
@@ -132,7 +132,7 @@
     },
     {
         "id": 14,
-        "img": "../dist/assets/images/course/course-vue.jpg",
+        "img": "../assets/images/course/course-vue.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "Learn Vue from scratch",
@@ -142,7 +142,7 @@
     },
     {
         "id": 15,
-        "img": "../dist/assets/images/course/course-wordpress.jpg",
+        "img": "../assets/images/course/course-wordpress.jpg",
         "classBadge": "success",
         "difficulty": "Beginner",
         "description": "WordPress: introduction to wordpress for beginners",
