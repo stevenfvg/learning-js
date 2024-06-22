@@ -1,4 +1,5 @@
-import courses from './public/data/courses.json';
+// Importing data for courses.
+import courses from '../public/data/courses.json';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.

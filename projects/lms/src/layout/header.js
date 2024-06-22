@@ -3,7 +3,7 @@ export default function header() {
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid px-0">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../public/assets/images/brand/logo/logo.svg" alt="logo" />
+                    <img src="/images/brand/logo/logo.svg" alt="logo" />
                 </a>
                 <!-- Mobile view nav wrap -->
                 <div class="ms-auto d-flex align-items-center order-lg-3">
@@ -70,7 +70,7 @@ export default function header() {
                         <li class="dropdown ms-2 d-inline-block position-static">
                             <a class="rounded-circle" href="#!" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 <div class="avatar avatar-md avatar-online">
-                                    <img alt="avatar" src="../public/assets/images/avatar/avatar.jpg" class="rounded-circle" />
+                                    <img alt="avatar" src="/images/avatar/avatar.jpg" class="rounded-circle" />
                                 </div>
                             </a>
                         </li>

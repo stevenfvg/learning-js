@@ -8,7 +8,7 @@ export default function footer() {
                     <div class="col-lg-4 col-md-6 col-12">
                     <!-- about company -->
                         <div class="mb-4">
-                            <img src="../public/assets/images/brand/logo/logo.svg" alt="logo" class="logo-inverse ">
+                            <img src="/images/brand/logo/logo.svg" alt="logo" class="logo-inverse ">
                             <div class="mt-4">
                                 <p>Geek is feature-rich components and beautifully Bootstrap UIKit for developers, built with bootstrap
                                 responsive framework.</p>
@@ -70,8 +70,8 @@ export default function footer() {
                             <p class="mb-1">Email: <a href="#!">support@geeksui.com</a></p>
                             <p>Phone: <span class="text-dark fw-semibold">(000) 123 456 789</span></p>
                             <div class="d-flex">
-                                <!-- <a href=""><img src="../public/assets/images/svg/appstore.svg" alt="" class="img-fluid"></a> -->
-                                <!-- <a href="" class="ms-2"><img src="../public/assets/images/svg/playstore.svg" alt="" class="img-fluid"></a> -->
+                                <!-- <a href=""><img src="/images/svg/appstore.svg" alt="" class="img-fluid"></a> -->
+                                <!-- <a href="" class="ms-2"><img src="/images/svg/playstore.svg" alt="" class="img-fluid"></a> -->
                             </div>
                         </div>
                     </div>
