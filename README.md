@@ -41,6 +41,12 @@ console.log('Hello World!');
 | `05` | Generate HTML with JavaScript | [view](examples/dom/js/generateHTML.js) |
 | `06` | Events | [view](examples/events/script.js) |
 
+## 🔥 Code Challenges
+
+| # | Content | Code |
+| --- | --- | --- |
+| `01` | Calculating the total | [view](examples/challenges/challenge-1/) |
+
 ## ⌨️ Projects with code
 
 | # | Project | Code | Link |
