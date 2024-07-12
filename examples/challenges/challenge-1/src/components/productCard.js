@@ -10,10 +10,10 @@ export default function productCard() {
                     <h6 class="card-title">Laptop Gamer AMD</h6>
                     <form>
                         <div class="my-3">
-                            <input type="number" class="form-control form-control-sm" id="quantities" placeholder="Quantity">
+                            <input type="number" class="form-control form-control-sm" id="selected-quantity" placeholder="Quantity">
                         </div>
                         <div class="my-3">
-                            <select class="form-select form-select-sm" aria-label="Small select example">
+                            <select class="form-select form-select-sm" aria-label="Small select example" id="selected-color">
                                 <option selected>Color</option>
                                 <option value="1">Dark</option>
                                 <option value="2">Dark Blue</option>
@@ -23,7 +23,7 @@ export default function productCard() {
                         <div class="my-3">
                             <p class="text-start">Price: <span id="price">${price.toLocaleString("en-US", {style:"currency", currency:"USD", minimumFractionDigits: 0})}</span></p>
                         </div>
-                        <button type="button" class="btn btn-warning btn-sm fw-medium">Calculate Total</button>
+                        <button type="button" class="btn btn-warning btn-sm fw-medium" id="calculate-total">Calculate Total</button>
                     </form>
                 </div>
             </div>
