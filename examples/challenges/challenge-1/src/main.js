@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#selected-quantity'),
         document.querySelector('#selected-color'),
         document.querySelector('#price'),
-        document.querySelector("#calculate-total"),
+        document.querySelector('#calculate-total'),
         document.querySelector('#total-amount'),
         document.querySelector('#quantity'),
         document.querySelector('.rounded-circle'),

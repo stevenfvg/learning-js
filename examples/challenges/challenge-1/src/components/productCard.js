@@ -21,7 +21,14 @@ export default function productCard() {
                             </select>
                         </div>
                         <div class="my-3">
-                            <p class="text-start">Price: <span id="price">${price.toLocaleString("en-US", {style:"currency", currency:"USD", minimumFractionDigits: 0})}</span></p>
+                            <p class="text-start">Price: <span id="price">${price.toLocaleString(
+                                'en-US',
+                                {
+                                    style: 'currency',
+                                    currency: 'USD',
+                                    minimumFractionDigits: 0,
+                                }
+                            )}</span></p>
                         </div>
                         <button type="button" class="btn btn-warning btn-sm fw-medium" id="calculate-total">Calculate Total</button>
                     </form>
