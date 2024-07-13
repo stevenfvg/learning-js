@@ -10,14 +10,14 @@ export default function productCard() {
                     <h6 class="card-title">Laptop Gamer AMD</h6>
                     <form>
                         <div class="my-3">
-                            <input type="number" class="form-control form-control-sm" id="selected-quantity" placeholder="Quantity">
+                            <input type="number" class="form-control form-control-sm" id="selected-quantity" placeholder="Quantity" step="1" min="1" max="9" pattern="[1-9]">
                         </div>
                         <div class="my-3">
                             <select class="form-select form-select-sm" aria-label="Small select example" id="selected-color">
-                                <option selected>Color</option>
-                                <option value="1">Dark</option>
-                                <option value="2">Dark Blue</option>
-                                <option value="3">Grey Silver</option>
+                                <option selected disabled>Color</option>
+                                <option value="#000000">Dark</option> 
+                                <option value="#00008B">Dark Blue</option>
+                                <option value="#C0C0C0">Grey Silver</option>
                             </select>
                         </div>
                         <div class="my-3">
