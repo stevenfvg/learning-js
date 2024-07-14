@@ -51,8 +51,8 @@ console.log('Hello World!');
 
 | # | Project | Code | Link |
 | --- | --- | --- | --- |
-| `01` | LMS | [view](projects/lms/) | [visit](https://lms-example.netlify.app/) |
-| `02` | Email sending simulator | [view]() | [visit]() |
+| `01` | LMS Shopping Cart | [view](projects/lms-shopping-cart) | [visit](https://lms-shopping-cart.netlify.app/) |
+| `02` | Contact Form | [view](projects/contact-form) | [visit]() |
 | `03` | Filter and Search | [view]() | [visit]() |
 | `04` | Store Texts in LocalStorage | [view]() | [visit]() |
 | `05` | LMS with LocalStorage | [view]() | [visit]() |
