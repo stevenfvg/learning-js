@@ -2,11 +2,17 @@ export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
     const [formContact, email, reason, message, btnSend, btnRest] = elements;
 
-    // Element Test.
-    console.log(formContact);
-    console.log(email);
-    console.log(reason);
-    console.log(message);
-    console.log(btnSend);
-    console.log(btnRest);
+    // Function to load event listeners to interact with elements.
+    const loadEventListeners = () => {
+        // Events are added to the input elements.
+        email.addEventListener('blur', validate);
+        reason.addEventListener('blur', validate);
+        message.addEventListener('blur', validate);
+    };
+
+    const validate = e => {
+        console.log(e.target.value);
+    };
+
+    loadEventListeners();
 }
