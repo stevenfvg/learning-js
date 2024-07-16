@@ -4,14 +4,25 @@ export function getElementsFromDom(elements) {
 
     // Function to load event listeners to interact with elements.
     const loadEventListeners = () => {
-        // Events are added to the input elements.
-        email.addEventListener('blur', validate);
-        reason.addEventListener('blur', validate);
-        message.addEventListener('blur', validate);
+        // Add event listener to the submit button.
+        btnSend.addEventListener("click", validate, false);
     };
 
     const validate = e => {
-        console.log(e.target.value);
+        // Prevent default form submission.
+        e.preventDefault();
+
+        // Trim the inputs.
+        email.value = email.value.trim();
+        message.value = message.value.trim();
+
+        // Check if the form is valid.
+        if (!formContact.checkValidity()) {
+            e.stopPropagation();
+        }
+        
+        // Add Bootstrap validation styles.
+        formContact.classList.add('was-validated');
     };
 
     loadEventListeners();

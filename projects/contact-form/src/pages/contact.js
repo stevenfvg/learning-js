@@ -79,7 +79,7 @@ export default function contact() {
                                         Email:
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input class="form-control" type="email" id="email" placeholder="Email" required />
+                                    <input class="form-control" type="email" id="email" placeholder="Example: mkt@company.com" required />
                                     <div class="invalid-feedback">Please enter an email</div>
                                 </div>
                                 <!-- form group -->
@@ -98,8 +98,12 @@ export default function contact() {
                                 </div>
                                 <!-- form group -->
                                 <div class="mb-3 col-12">
-                                    <label class="text-dark form-label" for="messages">Message:</label>
-                                    <textarea class="form-control" id="messages" rows="3" placeholder="Messages"></textarea>
+                                    <label class="text-dark form-label" for="messages">
+                                        Message:
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control" id="messages" rows="3" placeholder="Messages" required></textarea>
+                                    <div class="invalid-feedback">Please enter a message</div>
                                 </div>
                                 <!-- button -->
                                 <div class="d-grid gap-2 d-md-block">
