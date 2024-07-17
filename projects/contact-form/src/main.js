@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = [
         document.querySelector('form'),
         document.querySelector('#email'),
-        document.querySelector('#contactReason'),
-        document.querySelector('#messages'),
+        document.querySelector('#reason'),
+        document.querySelector('#message'),
         document.querySelector('#btn-send'),
         document.querySelector('#btn-reset'),
     ];

@@ -84,11 +84,11 @@ export default function contact() {
                                 </div>
                                 <!-- form group -->
                                 <div class="mb-3 col-12">
-                                    <label class="text-dark form-label" for="contactReason">
+                                    <label class="text-dark form-label" for="reason">
                                         Contact Reason:
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <select class="form-select" id="contactReason" required>
+                                    <select class="form-select" id="reason" required>
                                         <option value="">Select</option>
                                         <option value="Design">Design</option>
                                         <option value="Development">Development</option>
@@ -98,17 +98,17 @@ export default function contact() {
                                 </div>
                                 <!-- form group -->
                                 <div class="mb-3 col-12">
-                                    <label class="text-dark form-label" for="messages">
+                                    <label class="text-dark form-label" for="message">
                                         Message:
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <textarea class="form-control" id="messages" rows="3" placeholder="Messages" required></textarea>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="Messages" required></textarea>
                                     <div class="invalid-feedback">Please enter a message</div>
                                 </div>
                                 <!-- button -->
                                 <div class="d-grid gap-2 d-md-block">
-                                    <button type="submit" class="btn btn-primary mx-1" id="btn-send">Submit</button>
-                                    <button type="button" class="btn btn-light" id="btn-reset">
+                                    <button type="submit" class="btn btn-primary mx-1" id="btn-send" disabled>Submit</button>
+                                    <button type="reset" class="btn btn-light" id="btn-reset">
                                         <i class="bi bi-arrow-counterclockwise me-1"></i>
                                         Reset
                                     </button>
