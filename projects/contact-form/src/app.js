@@ -12,11 +12,11 @@ export function getElementsFromDom(elements) {
 
     // Function to load event listeners to interact with elements.
     const loadEventListeners = () => {
-        email.addEventListener('blur', assignValues);
-        reason.addEventListener('blur', assignValues);
-        message.addEventListener('blur', assignValues);
-        // Add event listener to the submit button.
+        email.addEventListener('input', assignValues);
+        reason.addEventListener('input', assignValues);
+        message.addEventListener('input', assignValues);
         btnSend.addEventListener('click', validate, false);
+        btnRest.addEventListener('click', resetForm);
     };
 
     const checkEmailData = () => {
@@ -62,6 +62,20 @@ export function getElementsFromDom(elements) {
 
         // Add Bootstrap validation styles.
         formContact.classList.add('was-validated');
+    };
+
+    const resetForm = e => {
+        e.preventDefault();
+
+        // Reset the email data object.
+        emailData.email = '';
+        emailData.reason = '';
+        emailData.message = '';
+
+        formContact.reset();
+        formContact.classList.remove('was-validated');
+        checkEmailData();
+        console.log(emailData);
     };
 
     loadEventListeners();
