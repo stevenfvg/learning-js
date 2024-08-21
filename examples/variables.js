@@ -1,0 +1,1 @@
+// Example of how to use the let and const variables and their scope.

@@ -1,0 +1,1 @@
+// Examples of string and template string methods
