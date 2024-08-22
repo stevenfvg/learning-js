@@ -46,3 +46,14 @@ console.log('Hello World!');
 | `09` | Control structures | [view](examples/control_structures.js) |
 | `10` | Iterators | [view](examples/iterators.js) |
 | `11` | ArrayMethods | [view](examples/arrays_methods.js) |
+
+**DOM Examples**
+
+| # | Content | Code |
+| --- | --- | --- |
+| `01` | Get elements from the DOM | [view](examples/dom/js/get_elements.js) |
+| `02` | Modify DOM elements | [view](examples/dom/js/modify_elements.js) |
+| `03` | Traversing the DOM | [view](examples/dom/js/traversing.js) |
+| `04` | Remove elements from the DOM | [view](examples/dom/js/remove_elements.js) |
+| `05` | Generate HTML with JavaScript | [view](examples/dom/js/generate_elements.js) |
+| `06` | Events | [view](examples/events) |
