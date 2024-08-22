@@ -57,3 +57,9 @@ console.log('Hello World!');
 | `04` | Remove elements from the DOM | [view](examples/dom/js/remove_elements.js) |
 | `05` | Generate HTML with JavaScript | [view](examples/dom/js/generate_elements.js) |
 | `06` | Events | [view](examples/events) |
+
+## 🔥 Code Challenges
+
+| # | Content | Level | Code |
+| --- | --- | --- | --- |
+| `01` | Challenge 1 - Calculating the total | Basic | [view](/projects/) |
