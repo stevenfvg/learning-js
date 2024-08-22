@@ -7,6 +7,23 @@
 Guide with codes and example projects to learn **JavaScript**.
 </div>
 
+### 📋 Requirements
+Before running the examples, make sure you have Node.js installed on your system. You can check if Node.js is installed by running the following command in your terminal or command prompt:
+
+```bash
+node --version
+```
+### 💻 Running the Examples
+Run the example you want using the following command:
+
+```bash
+node example_name.js
+```
+For example, to run an example called arrays_methods.js, use:
+
+```bash
+node arrays_methods.js
+```
 ## 📚 Basic example codes with modern ES6 syntax
 
 Hello World in JavaScript:
