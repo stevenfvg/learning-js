@@ -57,3 +57,25 @@ console.log('Hello World!');
 | `04` | Remove elements from the DOM | [view](examples/dom/js/remove_elements.js) |
 | `05` | Generate HTML with JavaScript | [view](examples/dom/js/generate_elements.js) |
 | `06` | Events | [view](examples/events) |
+
+## ⌨️ Project
+
+Development of a **Learning Management System (LMS)** to sell courses using **Vanilla JavaScript**, structured as challenges, each module or page of the project is a challenge.
+
+| # | Content |
+| --- | --- |
+| `01` | Home page - Shopping Cart |
+
+### 🏃‍♂️How to Run the Project
+Run the following commands to run the project on your local machine:
+
+```bash
+cd project
+
+# Start the development server
+npm run dev
+```
+### Access the application
+
+Open your browser and go to 🌐 http://localhost:5173 (or the URL provided by Vite in the console) to see the application running.
+ 
