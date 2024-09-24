@@ -19,6 +19,22 @@ export function getElementsFromDom(elements) {
     console.log(totalQuantity);
     console.log(productColor);
 
+    // Extracting and parsing the price of the product from the DOM element.
+    const price = priceOfTheProduct.innerText || priceOfTheProduct.textContent;
+    const rawPrice = Number(price.replace(/[\$,]/g, ''));
+
+    // Initializing the starting amount and displaying it.
+    const startingAmount = 0;
+    totalAmount.innerHTML = `${startingAmount.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+    })}`;
+
+    // Initializing the starting quantity and displaying it.
+    const startingQuantity = 0;
+    totalQuantity.innerHTML = `${startingQuantity}`;
+
     // Function to load event listeners to interact with elements.
     const loadEventListeners = () => {
         // Adding event listener for input event on quantity input field.
