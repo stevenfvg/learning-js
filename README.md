@@ -62,4 +62,4 @@ console.log('Hello World!');
 
 | # | Content | Level | Code |
 | --- | --- | --- | --- |
-| `01` | Challenge 1 - Calculating the total | Basic | [view](/projects/) |
+| `01` | Challenge 1 - DOM Manipulation | Basic | [view](/projects/challenge-1/) |
