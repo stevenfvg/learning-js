@@ -48,19 +48,73 @@ export function getElementsFromDom(elements) {
     // Function to handle input event for the quantity input field.
     const handleInputQuantity = event => {
         let quantityValue = event.target.value;
-        console.log(quantityValue);
+        // Check if the value does not comply with the pattern.
+        if (!/^[1-9]$/.test(quantityValue)) {
+            if (quantityValue >= 10) {
+                alert('Only values ​​from 1 to 9 are allowed.');
+                // If the value is invalid, clear it.
+                quantityValue = '';
+            }
+        }
+        // Update the input field value with the valid quantity.
+        event.target.value = quantityValue;
     };
 
     // Function to handle keydown event for the quantity input field.
     const handleKeydownQuantity = event => {
         const controlKeys = ['Backspace', 'ArrowUp', 'ArrowDown'];
-        console.log(controlKeys);
+
+        // Allow control keys without restriction.
+        if (controlKeys.includes(event.key)) {
+            return;
+        }
+
+        // Allows only one digit between 1 and 9.
+        if (!/^[1-9]$/.test(event.key)) {
+            event.preventDefault();
+        }
     };
 
     // Function to calculate the total price based on quantity and product price.
     const calculateTheTotal = event => {
         event.preventDefault();
-        console.log('Try clicking on the calculate total button.');
+        const quantity = parseInt(selectedQuantity.value);
+        const color = selectedColor.value;
+
+        // Validate if the quantity is selected.
+        if (selectedQuantity.value === '' || selectedQuantity.value === NaN) {
+            alert(
+                'You must select the quantity of the product to calculate the total.'
+            );
+            return;
+        }
+
+        // Validate if the color is selected.
+        if (
+            selectedColor.value === '' ||
+            selectedColor.value === 'color' ||
+            selectedColor.value === 'Color'
+        ) {
+            alert(
+                'You must select the color of the product to continue with the operation.'
+            );
+            return;
+        } else {
+            // Calculate the total price.
+            const total = quantity * rawPrice;
+            // Display the total price.
+            totalAmount.innerHTML = `${total.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+            })}`;
+            // Display the selected quantity.
+            totalQuantity.innerHTML = `${quantity}`;
+
+            // Update the product color display.
+            productColor.classList.remove('bg-secondary');
+            productColor.style.backgroundColor = color;
+        }
     };
 
     // Load all the event listeners.
