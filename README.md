@@ -62,4 +62,4 @@ console.log('Hello World!');
 
 | # | Content | Level | Code |
 | --- | --- | --- | --- |
-| `01` | Challenge 1 - DOM Manipulation | Basic | [view](/projects/challenge-1/) |
+| `01` | Challenge 1 - DOM Manipulation and Conditionals | Basic | [view](/projects/challenge-1/) |
