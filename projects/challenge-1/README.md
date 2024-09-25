@@ -1,6 +1,6 @@
 <div align="center">
 
-# Challenge 1 - DOM Manipulation
+# Challenge 1 - DOM Manipulation and Conditionals
 
 </div>
 
@@ -28,13 +28,18 @@ The user should be able to type the product quantity and color through the input
 
 ## Requirements
 
-1. Add all the necessary elements within the HTML.
+1. Add all the necessary elements inside the HTML and use Bootstrap to apply styles.
 2. Add the event to the correct element using the requested event type.
 3. Select and save the elements to be modified in variables.
 4. Modify the DOM to update the total amount to be paid.
-5. Modify the DOM to update the specified product quantity in the input.
+5. Modify the DOM to update the product quantity specified in the input.
 6. Modify the DOM to change the color of the circle using the color specified by the user.
-7. Uses a Bootstrap framework to apply styles.
+
+**Validations**:
+   1. Only a number greater than 0 and less than 10 can be entered   in the *quantity* input.
+   2. The total amount can only be calculated if there is a quantity entered and the product color.
+   3. If the product color is not selected or the quantity field is empty, an alert must be displayed to the user indicating that neither of the two fields must be empty.
+
 
 Good luck!
 
