@@ -10,15 +10,6 @@ export function getElementsFromDom(elements) {
         productColor,
     ] = elements;
 
-    // Check HTML elements:
-    console.log(selectedQuantity);
-    console.log(selectedColor);
-    console.log(priceOfTheProduct);
-    console.log(btnCalculateTotal);
-    console.log(totalAmount);
-    console.log(totalQuantity);
-    console.log(productColor);
-
     // Extracting and parsing the price of the product from the DOM element.
     const price = priceOfTheProduct.innerText || priceOfTheProduct.textContent;
     const rawPrice = Number(price.replace(/[\$,]/g, ''));
