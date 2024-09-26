@@ -10,17 +10,35 @@ export function getElementsFromDom(elements) {
         editIndexInput,
     ] = elements;
 
-    let records = [];
+    // Initialize records from local storage
+    let records = JSON.parse(localStorage.getItem('records')) || [];
 
     // Display records
     const displayRecords = () => {
         recordList.innerHTML = '';
+        const row = document.createElement('tr');
         if (records.length === 0) {
-            const row = document.createElement('tr');
             row.innerHTML = `<td colspan="5" class="text-center text-danger">No Record Found</td>`;
             recordList.appendChild(row);
         } else {
-            // If it is different from 0, show the student data.
+            records.forEach((record, index) => {
+                row.innerHTML = `
+                    <td>${record.name}</td>
+                    <td>${record.age}</td>
+                    <td>${record.email}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="editRecord(${index})">
+                            <i class="bi bi-pen me-1"></i>Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteRecord(${index})">
+                            <i class="bi bi-trash me-1"></i>Delete
+                        </button>
+                    </td>
+                `;
+                recordList.appendChild(row);
+            });
         }
     };
 
