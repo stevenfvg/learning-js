@@ -18,12 +18,13 @@ export function getElementsFromDom(elements) {
     // Display records
     const displayRecords = () => {
         recordList.innerHTML = '';
-        const row = document.createElement('tr');
         if (records.length === 0) {
+            const row = document.createElement('tr');
             row.innerHTML = `<td colspan="5" class="text-center text-danger">No Record Found</td>`;
             recordList.appendChild(row);
         } else {
             records.forEach((record, index) => {
+                const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${record.name}</td>
                     <td>${record.age}</td>
