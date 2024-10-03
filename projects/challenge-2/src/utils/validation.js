@@ -33,7 +33,7 @@ export const validateForm = (
         isValid = false;
     } else {
         firstNameValue =
-            firstNameValue.charAt(0).toUpperCase() + firstNameValue.slice(1);
+            firstNameValue.charAt(0).toUpperCase() + firstNameValue.slice(1).toLowerCase();
         firstNameInput.value = firstNameValue;
         firstNameInput.classList.remove('is-invalid');
         firstNameInput.classList.add('is-valid');
@@ -60,13 +60,15 @@ export const validateForm = (
         isValid = false;
     } else {
         lastNameValue =
-            lastNameValue.charAt(0).toUpperCase() + lastNameValue.slice(1);
+            lastNameValue.charAt(0).toUpperCase() + lastNameValue.slice(1).toLowerCase();
         lastNameInput.value = lastNameValue;
         lastNameInput.classList.remove('is-invalid');
         lastNameInput.classList.add('is-valid');
         lastNameInput.nextElementSibling.classList.add('valid-feedback');
         lastNameInput.nextElementSibling.textContent = '';
     }
+
+    //
 
     return isValid;
 };

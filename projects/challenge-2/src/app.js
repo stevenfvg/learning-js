@@ -49,6 +49,7 @@ export function getElementsFromDom(elements) {
         recordForm.addEventListener('submit', handleFormSubmit);
     };
 
+    // 
     const handleFormSubmit = event => {
         event.preventDefault();
 
