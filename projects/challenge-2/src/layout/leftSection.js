@@ -7,25 +7,25 @@ export default function leftSection() {
                     <div class="col-sm-12 col-md-6">
                         <input type="text" class="col-6 form-control" id="first-name" placeholder="First name" required>
                         <div class="invalid-feedback">
-                            Please enter your name.
+                            <!-- Custom validation message will be added here -->
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <input type="text" class="col-6 form-control" id="last-name" placeholder="Last name" required>
                         <div class="invalid-feedback">
-                            Please enter your last name.
+                            <!-- Custom validation message will be added here -->
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-2">
                         <input type="number" class="form-control" id="age" placeholder="Age" min="18" required>
                         <div class="invalid-feedback">
-                            Please enter your age.
+                            <!-- Custom validation message will be added here -->
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-10">
                         <input type="email" class="form-control" id="email" placeholder="Email" required>
                         <div class="invalid-feedback">
-                            Please enter your email.
+                            <!-- Custom validation message will be added here -->
                         </div>
                     </div>
                     <div class="col-12">

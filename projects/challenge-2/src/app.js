@@ -1,3 +1,5 @@
+import { validateEmail, validateForm } from "./utils/validation.js";
+
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
     const [
@@ -42,6 +44,23 @@ export function getElementsFromDom(elements) {
         }
     };
 
-    // Initial display
+    // Function to load event listeners to interact with elements.
+    const loadEventListeners = () => {
+        recordForm.addEventListener('submit', handleFormSubmit);
+    };
+
+    const handleFormSubmit = event => {
+        event.preventDefault();
+
+        // Call the validation function before continuing
+        if (validateForm(firstNameInput, lastNameInput, ageInput, emailInput)) {
+            const name = `${firstNameInput.value} ${lastNameInput.value}`;
+            console.log(`Name: ${name}`);
+        }
+    }
+
+    // Initial display.
     displayRecords();
+    // Load all the event listeners.
+    loadEventListeners();
 }
