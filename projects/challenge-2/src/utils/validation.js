@@ -4,6 +4,13 @@ export const validateEmail = email => {
     return re.test(String(email).toLowerCase());
 };
 
+// Function to validate duplicate students.
+export const isDuplicate = (records, email) => {
+     return records.some(
+         record => record.email.toLowerCase() === email.toLowerCase()
+     );
+};
+
 // Function to validate that fields are not empty or contain spaces.
 export const validateForm = (
     firstNameInput,
@@ -90,13 +97,24 @@ export const validateForm = (
         ageInput.nextElementSibling.textContent = ''; 
     }
 
+    // Validate the "Email" field.
+    let emailValue = emailInput.value.trim();
+    emailValue = emailValue.toLowerCase();
+    if (emailValue === '') {
+        emailInput.classList.add('is-invalid');
+        emailInput.nextElementSibling.textContent = 'Email is required.';
+        isValid = false;
+    } else if (!validateEmail(emailValue)) {
+        emailInput.classList.add('is-invalid');
+        emailInput.nextElementSibling.textContent = 'Please enter a valid email address.';
+        isValid = false;
+    } else {
+        emailInput.classList.remove('is-invalid');
+        emailInput.classList.add('is-valid');
+        emailInput.nextElementSibling.classList.add('valid-feedback');
+        emailInput.nextElementSibling.textContent = '';
+    }
 
     return isValid;
 };
 
-// Function to validate duplicate students.
-// export const isDuplicate = email => {
-//     return records.some(
-//         record => record.email.toLowerCase() === email.toLowerCase()
-//     );
-// };

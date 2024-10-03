@@ -1,4 +1,4 @@
-import { validateEmail, validateForm } from "./utils/validation.js";
+import { isDuplicate, validateForm } from "./utils/validation.js";
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
@@ -49,7 +49,7 @@ export function getElementsFromDom(elements) {
         recordForm.addEventListener('submit', handleFormSubmit);
     };
 
-    // 
+    // Add or Update a record
     const handleFormSubmit = event => {
         event.preventDefault();
 
@@ -57,9 +57,36 @@ export function getElementsFromDom(elements) {
         if (validateForm(firstNameInput, lastNameInput, ageInput, emailInput)) {
             const name = `${firstNameInput.value} ${lastNameInput.value}`;
             const age = ageInput.value;
+            const email = emailInput.value;
+            const editIndex = parseInt(editIndexInput.value);
             
             console.log(`Name: ${name}`);
             console.log(`Age: ${age}`);
+            console.log(`Email: ${email}`);
+            console.log(`Edit Index: ${editIndex}`);
+
+            if (name && age && email) {
+                if (isDuplicate(records,  email) && editIndex === -1) {
+                    alert('Student already exists.')
+                    return;
+                }
+
+                if (editIndex === -1) {
+                    // Add a new record.
+                    records.push({ name, age, email });
+                } else {
+                    // Update an existing record.
+                    records[editIndex] = { name, age, email };
+                    editIndexInput.value = -1
+                }
+
+                localStorage.setItem('records', JSON.stringify(records));
+                firstNameInput.value = '';
+                lastNameInput.value = '';
+                ageInput.value = '';
+                emailInput.value = '';
+                displayRecords();
+            }
         }
     }
 
