@@ -13,8 +13,9 @@ export const validateForm = (
 ) => {
     let isValid = true;
     const namePattern = /^[A-Za-z]+$/; // Regular expression to validate only letters.
+    const agePattern = /^[0-9]+$/; // Regular expression to validate only positive integers.
 
-    // Validate the "First Name" field.
+    // Validate the "First name" field.
     let firstNameValue = firstNameInput.value.trim();
     if (firstNameValue === '') {
         firstNameInput.classList.add('is-invalid');
@@ -68,7 +69,27 @@ export const validateForm = (
         lastNameInput.nextElementSibling.textContent = '';
     }
 
-    //
+    // Validate the "Age" field.
+    let ageValue = ageInput.value.trim();
+    if (ageValue === '') {
+        ageInput.classList.add('is-invalid');
+        ageInput.nextElementSibling.textContent = 'Age is required.';
+        isValid = false;
+    } else if (!agePattern.test(ageValue)) {
+        ageInput.classList.add('is-invalid');
+        ageInput.nextElementSibling.textContent = 'Age must be a positive integer.';
+        isValid = false;
+    } else if (parseInt(ageValue) < 18) {
+        ageInput.classList.add('is-invalid');
+        ageInput.nextElementSibling.textContent = 'You must be older than 18.';
+        isValid = false;
+    } else {
+        ageInput.classList.remove('is-invalid');
+        ageInput.classList.add('is-valid');
+        ageInput.nextElementSibling.classList.add('valid-feedback');
+        ageInput.nextElementSibling.textContent = ''; 
+    }
+
 
     return isValid;
 };

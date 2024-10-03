@@ -56,7 +56,10 @@ export function getElementsFromDom(elements) {
         // Call the validation function before continuing
         if (validateForm(firstNameInput, lastNameInput, ageInput, emailInput)) {
             const name = `${firstNameInput.value} ${lastNameInput.value}`;
+            const age = ageInput.value;
+            
             console.log(`Name: ${name}`);
+            console.log(`Age: ${age}`);
         }
     }
 
