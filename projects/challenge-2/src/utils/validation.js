@@ -99,7 +99,6 @@ export const validateForm = (
 
     // Validate the "Email" field.
     let emailValue = emailInput.value.trim();
-    emailValue = emailValue.toLowerCase();
     if (emailValue === '') {
         emailInput.classList.add('is-invalid');
         emailInput.nextElementSibling.textContent = 'Email is required.';
@@ -109,6 +108,8 @@ export const validateForm = (
         emailInput.nextElementSibling.textContent = 'Please enter a valid email address.';
         isValid = false;
     } else {
+        emailValue = emailValue.toLowerCase();
+        emailInput.value = emailValue;
         emailInput.classList.remove('is-invalid');
         emailInput.classList.add('is-valid');
         emailInput.nextElementSibling.classList.add('valid-feedback');

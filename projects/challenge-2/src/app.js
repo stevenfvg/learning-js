@@ -1,4 +1,4 @@
-import { isDuplicate, validateForm } from "./utils/validation.js";
+import { isDuplicate, validateForm } from './utils/validation.js';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
@@ -12,8 +12,27 @@ export function getElementsFromDom(elements) {
         editIndexInput,
     ] = elements;
 
-    // Initialize records from local storage
+    // Initialize records from local storage.
     let records = JSON.parse(localStorage.getItem('records')) || [];
+
+    // Function to reset fields and validation classes.
+    const resetForm = () => {
+        // Reset input values
+        firstNameInput.value = '';
+        lastNameInput.value = '';
+        ageInput.value = '';
+        emailInput.value = '';
+
+        // Remove validation classes and feedback messages
+        firstNameInput.classList.remove('is-valid', 'is-invalid');
+        firstNameInput.nextElementSibling.textContent = '';
+        lastNameInput.classList.remove('is-valid', 'is-invalid');
+        lastNameInput.nextElementSibling.textContent = '';
+        ageInput.classList.remove('is-valid', 'is-invalid');
+        ageInput.nextElementSibling.textContent = '';
+        emailInput.classList.remove('is-valid', 'is-invalid');
+        emailInput.nextElementSibling.textContent = '';
+    };
 
     // Display records
     const displayRecords = () => {
@@ -60,15 +79,15 @@ export function getElementsFromDom(elements) {
             const age = ageInput.value;
             const email = emailInput.value;
             const editIndex = parseInt(editIndexInput.value);
-            
+
             console.log(`Name: ${name}`);
             console.log(`Age: ${age}`);
             console.log(`Email: ${email}`);
             console.log(`Edit Index: ${editIndex}`);
 
             if (name && age && email) {
-                if (isDuplicate(records,  email) && editIndex === -1) {
-                    alert('Student already exists.')
+                if (isDuplicate(records, email) && editIndex === -1) {
+                    alert('Student already exists.');
                     return;
                 }
 
@@ -78,18 +97,15 @@ export function getElementsFromDom(elements) {
                 } else {
                     // Update an existing record.
                     records[editIndex] = { name, age, email };
-                    editIndexInput.value = -1
+                    editIndexInput.value = -1;
                 }
 
                 localStorage.setItem('records', JSON.stringify(records));
-                firstNameInput.value = '';
-                lastNameInput.value = '';
-                ageInput.value = '';
-                emailInput.value = '';
+                resetForm();
                 displayRecords();
             }
         }
-    }
+    };
 
     // Initial display.
     displayRecords();
