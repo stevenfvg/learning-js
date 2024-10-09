@@ -49,12 +49,12 @@ export function getElementsFromDom(elements) {
                     <td>${record.age}</td>
                     <td>${record.email}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="editRecord(${index})">
+                        <button type="button" class="btn btn-sm btn-outline-primary" data-index="${index}" data-action="edit">
                             <i class="bi bi-pen me-1"></i>Edit
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteRecord(${index})">
+                        <button type="button" class="btn btn-sm btn-outline-danger" data-index="${index}" data-action="delete">
                             <i class="bi bi-trash me-1"></i>Delete
                         </button>
                     </td>
@@ -66,24 +66,40 @@ export function getElementsFromDom(elements) {
 
     // Function to load event listeners to interact with elements.
     const loadEventListeners = () => {
+        // Event listener for form submission.
         recordForm.addEventListener('submit', handleFormSubmit);
+
+        // Event delegation: Attach event listener to recordList (the parent container).
+        recordList.addEventListener('click', event => {
+            const target = event.target.closest('button');
+            if (target) {
+                const index = target.getAttribute('data-index');
+                const action = target.getAttribute('data-action');
+
+                if (action === 'edit') {
+                    editRecord(index);
+                } else if (action === 'delete') {
+                    deleteRecord(index);
+                }
+            }
+        });
     };
 
     // Add or Update a record
     const handleFormSubmit = event => {
         event.preventDefault();
 
-        // Call the validation function before continuing
+        // Call the validation function before continuinga
         if (validateForm(firstNameInput, lastNameInput, ageInput, emailInput)) {
             const name = `${firstNameInput.value} ${lastNameInput.value}`;
             const age = ageInput.value;
             const email = emailInput.value;
             const editIndex = parseInt(editIndexInput.value);
 
-            console.log(`Name: ${name}`);
-            console.log(`Age: ${age}`);
-            console.log(`Email: ${email}`);
-            console.log(`Edit Index: ${editIndex}`);
+            // console.log(`Name: ${name}`);
+            // console.log(`Age: ${age}`);
+            // console.log(`Email: ${email}`);
+            // console.log(`Edit Index: ${editIndex}`);
 
             if (name && age && email) {
                 if (isDuplicate(records, email) && editIndex === -1) {
@@ -105,6 +121,25 @@ export function getElementsFromDom(elements) {
                 displayRecords();
             }
         }
+    };
+
+    // Edit a record
+    const editRecord = index => {
+        const recordToEdit = records[index];
+        console.log(recordToEdit);
+
+        firstNameInput.value = recordToEdit.name.split(' ')[0];
+        lastNameInput.value = recordToEdit.name.split(' ')[1];
+        ageInput.value = recordToEdit.age;
+        emailInput.value = recordToEdit.email;
+        editIndexInput.value = index;
+    };
+
+    // Delete a record
+    const deleteRecord = index => {
+        records.splice(index, 1);
+        localStorage.setItem('records', JSON.stringify(records));
+        displayRecords();
     };
 
     // Initial display.
