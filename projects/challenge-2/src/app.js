@@ -15,6 +15,8 @@ export function getElementsFromDom(elements) {
 
     // Initialize records from local storage.
     let records = JSON.parse(localStorage.getItem('records')) || [];
+    // Uncomment the following line to see the log table in the browser console:
+    // console.table(records);
 
     // Function to reset fields and validation classes.
     const resetForm = () => {
@@ -97,11 +99,6 @@ export function getElementsFromDom(elements) {
             const email = emailInput.value;
             const editIndex = parseInt(editIndexInput.value);
 
-            // console.log(`Name: ${name}`);
-            // console.log(`Age: ${age}`);
-            // console.log(`Email: ${email}`);
-            // console.log(`Edit Index: ${editIndex}`);
-
             if (name && age && email) {
                 if (isDuplicate(records, email) && editIndex === -1) {
                     // alert('Student already exists.');
@@ -142,7 +139,6 @@ export function getElementsFromDom(elements) {
     // Edit a record
     const editRecord = index => {
         const recordToEdit = records[index];
-        console.log(recordToEdit);
 
         firstNameInput.value = recordToEdit.name.split(' ')[0];
         lastNameInput.value = recordToEdit.name.split(' ')[1];
