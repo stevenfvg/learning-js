@@ -1,4 +1,5 @@
 import { isDuplicate, validateForm } from './utils/validation.js';
+import Swal from 'sweetalert2';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
@@ -79,7 +80,7 @@ export function getElementsFromDom(elements) {
                 if (action === 'edit') {
                     editRecord(index);
                 } else if (action === 'delete') {
-                    deleteRecord(index);
+                    confirmDeleteRecord(index);
                 }
             }
         });
@@ -103,7 +104,15 @@ export function getElementsFromDom(elements) {
 
             if (name && age && email) {
                 if (isDuplicate(records, email) && editIndex === -1) {
-                    alert('Student already exists.');
+                    // alert('Student already exists.');
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'error',
+                        title: 'Student already exists!',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                    resetForm();
                     return;
                 }
 
@@ -119,6 +128,13 @@ export function getElementsFromDom(elements) {
                 localStorage.setItem('records', JSON.stringify(records));
                 resetForm();
                 displayRecords();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Record successful!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
             }
         }
     };
@@ -133,6 +149,29 @@ export function getElementsFromDom(elements) {
         ageInput.value = recordToEdit.age;
         emailInput.value = recordToEdit.email;
         editIndexInput.value = index;
+    };
+
+    const confirmDeleteRecord = index => {
+        Swal.fire({
+            title: 'Are you sure you want to delete the record?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+        }).then(result => {
+            if (result.isConfirmed) {
+                deleteRecord(index);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Record deleted!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        });
     };
 
     // Delete a record
