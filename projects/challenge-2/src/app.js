@@ -48,15 +48,15 @@ export function getElementsFromDom(elements) {
             records.forEach((record, index) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${record.name}</td>
-                    <td>${record.age}</td>
-                    <td>${record.email}</td>
-                    <td>
+                    <td class="text-nowrap text-truncate" style="max-width: 150px;">${record.name}</td>
+                    <td class="text-nowrap text-truncate" style="max-width: 150px;">${record.age}</td>
+                    <td class="text-nowrap text-truncate" style="max-width: 150px;">${record.email}</td>
+                    <td class="text-nowrap text-truncate" style="max-width: 150px;">
                         <button type="button" class="btn btn-sm btn-outline-primary" data-index="${index}" data-action="edit">
                             <i class="bi bi-pen me-1"></i>Edit
                         </button>
                     </td>
-                    <td>
+                    <td class="text-nowrap text-truncate" style="max-width: 150px;">
                         <button type="button" class="btn btn-sm btn-outline-danger" data-index="${index}" data-action="delete">
                             <i class="bi bi-trash me-1"></i>Delete
                         </button>
@@ -153,7 +153,7 @@ export function getElementsFromDom(elements) {
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#0d6efd',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!',
         }).then(result => {
