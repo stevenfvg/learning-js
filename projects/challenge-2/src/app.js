@@ -106,7 +106,8 @@ export function getElementsFromDom(elements) {
         if (name && age && email) {
             if (isDuplicate(records, email) && editIndex === -1) {
                 Swal.fire({
-                    position: 'top',
+                    toast: true,
+                    position: 'top-end',
                     icon: 'error',
                     title: 'Student already exists!',
                     showConfirmButton: false,
@@ -127,6 +128,7 @@ export function getElementsFromDom(elements) {
             resetForm();
             displayRecords();
             Swal.fire({
+                toast: true,
                 position: 'top-end',
                 icon: 'success',
                 title: 'Record successful!',
@@ -160,6 +162,7 @@ export function getElementsFromDom(elements) {
             if (result.isConfirmed) {
                 deleteRecord(index);
                 Swal.fire({
+                    toast: true,
                     position: 'top-end',
                     icon: 'success',
                     title: 'Record deleted!',
