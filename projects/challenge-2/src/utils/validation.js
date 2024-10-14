@@ -1,121 +1,108 @@
-// Validate the email format.
-export const validateEmail = email => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-};
+import { observeIsValid } from '../helper/validationHelpers.js';
 
 // Function to validate duplicate students.
 export const isDuplicate = (records, email) => {
-     return records.some(
-         record => record.email.toLowerCase() === email.toLowerCase()
-     );
+    return records.some(
+        record => record.email.toLowerCase() === email.toLowerCase()
+    );
 };
 
-// Function to validate that fields are not empty or contain spaces.
-export const validateForm = (
-    firstNameInput,
-    lastNameInput,
-    ageInput,
-    emailInput
-) => {
+// Validate the format of the first or last name.
+const validateFirstNameOrLastName = value => {
+    const re = /^[A-Za-z]+$/;
+    return re.test(String(value));
+};
+
+// Validate age format.
+const validateAge = value => {
+    const re = /^[0-9]+$/;
+    return re.test(String(value));
+};
+
+// Validate the email format.
+const validateEmail = value => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(value));
+};
+
+const removeValidationWarning = (element) => {
+    element.classList.remove('is-invalid');
+    element.classList.add('is-valid');
+    element.nextElementSibling.classList.add('valid-feedback');
+    element.nextElementSibling.textContent = '';
+};
+
+// Main function to validate that all values ​​entered into the form are correct.
+export const validateInputForm = event => {
+    const element = event.target;
+    const elementValue = event.target.value.trim();
+    const id = event.target.id;
+
     let isValid = true;
-    const namePattern = /^[A-Za-z]+$/; // Regular expression to validate only letters.
-    const agePattern = /^[0-9]+$/; // Regular expression to validate only positive integers.
 
-    // Validate the "First name" field.
-    let firstNameValue = firstNameInput.value.trim();
-    if (firstNameValue === '') {
-        firstNameInput.classList.add('is-invalid');
-        firstNameInput.nextElementSibling.textContent =
-            'Please enter your first name.';
-        isValid = false;
-    } else if (firstNameValue.indexOf(' ') !== -1) {
-        firstNameInput.classList.add('is-invalid');
-        firstNameInput.nextElementSibling.textContent =
-            'Enter only one name (no spaces).';
-        isValid = false;
-    } else if (!namePattern.test(firstNameValue)) {
-        firstNameInput.classList.add('is-invalid');
-        firstNameInput.nextElementSibling.textContent =
-            'Only letters are allowed.';
-        isValid = false;
+    // Validate that the fields are not empty.
+    if (elementValue === '') {
+        element.classList.add('is-invalid');
+        if (id === 'first-name') {
+            element.nextElementSibling.textContent = 'Please enter your first name.';
+            isValid = false;
+        } else if (id === 'last-name') {
+            element.nextElementSibling.textContent = 'Please enter your last name.';
+            isValid = false;
+        } else if (id === 'age') {
+            element.nextElementSibling.textContent = 'Age is required.';
+            isValid = false;
+        } else if (id === 'email') {
+            element.nextElementSibling.textContent = 'Email is required.';
+            isValid = false;
+        }
+        observeIsValid();
+        return isValid;
+    } else if (elementValue.indexOf(' ') !== -1) {
+        element.classList.add('is-invalid');
+        if (id === 'first-name') {
+            element.nextElementSibling.textContent = 'Enter only one name (no spaces).';
+            isValid = false;
+        } else if (id === 'last-name') {
+            element.nextElementSibling.textContent = 'Enter only the first last name (without spaces).';
+            isValid = false;
+        } else {
+            element.nextElementSibling.textContent = 'Invalid format';
+            isValid = false;
+        }
+        observeIsValid();
+        return isValid;
     } else {
-        firstNameValue =
-            firstNameValue.charAt(0).toUpperCase() + firstNameValue.slice(1).toLowerCase();
-        firstNameInput.value = firstNameValue;
-        firstNameInput.classList.remove('is-invalid');
-        firstNameInput.classList.add('is-valid');
-        firstNameInput.nextElementSibling.classList.add('valid-feedback');
-        firstNameInput.nextElementSibling.textContent = '';
+        // Capitalize the first/last name.
+        if (id === 'first-name' || id === 'last-name') {
+            const formattedValue = elementValue.charAt(0).toUpperCase() + elementValue.slice(1).toLowerCase();
+            element.value = formattedValue;
+        }
+        // Format the email field to lowercase letters.
+        if (id === 'email') {
+            const formattedValue = elementValue.toLowerCase();
+            element.value = formattedValue;
+        }
+        removeValidationWarning(element);
     }
 
-    // Validate the "Last Name" field.
-    let lastNameValue = lastNameInput.value.trim();
-    if (lastNameValue === '') {
-        lastNameInput.classList.add('is-invalid');
-        lastNameInput.nextElementSibling.textContent =
-            'Please enter your last name.';
+    // Format specific validations.
+    if ((id === 'first-name' && !validateFirstNameOrLastName(elementValue)) || (id === 'last-name' && !validateFirstNameOrLastName(elementValue))) {
+        element.classList.add('is-invalid');
+        element.nextElementSibling.textContent = 'Only letters are allowed.';
         isValid = false;
-    } else if (lastNameValue.indexOf(' ') !== -1) {
-        lastNameInput.classList.add('is-invalid');
-        lastNameInput.nextElementSibling.textContent =
-            'Enter only the first last name (without spaces).';
+    } else if (id === 'age' && !validateAge(elementValue)) {
+        element.classList.add('is-invalid');
+        element.nextElementSibling.textContent = 'Age must be a positive integer.';
         isValid = false;
-    } else if (!namePattern.test(lastNameValue)) {
-        lastNameInput.classList.add('is-invalid');
-        lastNameInput.nextElementSibling.textContent =
-            'Only letters are allowed.';
+    } else if (id === 'age' && parseInt(elementValue) < 18) {
+        element.classList.add('is-invalid');
+        element.nextElementSibling.textContent = 'You must be older than 18.';
         isValid = false;
-    } else {
-        lastNameValue =
-            lastNameValue.charAt(0).toUpperCase() + lastNameValue.slice(1).toLowerCase();
-        lastNameInput.value = lastNameValue;
-        lastNameInput.classList.remove('is-invalid');
-        lastNameInput.classList.add('is-valid');
-        lastNameInput.nextElementSibling.classList.add('valid-feedback');
-        lastNameInput.nextElementSibling.textContent = '';
+    } else if (id === 'email' && !validateEmail(elementValue)) {
+        element.classList.add('is-invalid');
+        element.nextElementSibling.textContent = 'Please enter a valid email address.';
+        isValid = false;
     }
-
-    // Validate the "Age" field.
-    let ageValue = ageInput.value.trim();
-    if (ageValue === '') {
-        ageInput.classList.add('is-invalid');
-        ageInput.nextElementSibling.textContent = 'Age is required.';
-        isValid = false;
-    } else if (!agePattern.test(ageValue)) {
-        ageInput.classList.add('is-invalid');
-        ageInput.nextElementSibling.textContent = 'Age must be a positive integer.';
-        isValid = false;
-    } else if (parseInt(ageValue) < 18) {
-        ageInput.classList.add('is-invalid');
-        ageInput.nextElementSibling.textContent = 'You must be older than 18.';
-        isValid = false;
-    } else {
-        ageInput.classList.remove('is-invalid');
-        ageInput.classList.add('is-valid');
-        ageInput.nextElementSibling.classList.add('valid-feedback');
-        ageInput.nextElementSibling.textContent = ''; 
-    }
-
-    // Validate the "Email" field.
-    let emailValue = emailInput.value.trim();
-    if (emailValue === '') {
-        emailInput.classList.add('is-invalid');
-        emailInput.nextElementSibling.textContent = 'Email is required.';
-        isValid = false;
-    } else if (!validateEmail(emailValue)) {
-        emailInput.classList.add('is-invalid');
-        emailInput.nextElementSibling.textContent = 'Please enter a valid email address.';
-        isValid = false;
-    } else {
-        emailValue = emailValue.toLowerCase();
-        emailInput.value = emailValue;
-        emailInput.classList.remove('is-invalid');
-        emailInput.classList.add('is-valid');
-        emailInput.nextElementSibling.classList.add('valid-feedback');
-        emailInput.nextElementSibling.textContent = '';
-    }
-
-    return isValid;
+    observeIsValid(element);
 };
-

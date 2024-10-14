@@ -1,4 +1,4 @@
-import { isDuplicate, validateForm } from './utils/validation.js';
+import { isDuplicate, validateInputForm } from './utils/validation.js';
 import Swal from 'sweetalert2';
 
 export function getElementsFromDom(elements) {
@@ -69,6 +69,12 @@ export function getElementsFromDom(elements) {
 
     // Function to load event listeners to interact with elements.
     const loadEventListeners = () => {
+        // Validate each form field through events.
+        firstNameInput.addEventListener('input', validateInputForm);
+        lastNameInput.addEventListener('input', validateInputForm);
+        ageInput.addEventListener('input', validateInputForm);
+        emailInput.addEventListener('input', validateInputForm);
+
         // Event listener for form submission.
         recordForm.addEventListener('submit', handleFormSubmit);
 
@@ -91,48 +97,42 @@ export function getElementsFromDom(elements) {
     // Add or Update a record
     const handleFormSubmit = event => {
         event.preventDefault();
+        
+        const name = `${firstNameInput.value} ${lastNameInput.value}`;
+        const age = ageInput.value;
+        const email = emailInput.value;
+        const editIndex = parseInt(editIndexInput.value);
 
-        // Call the validation function before continuinga
-        if (validateForm(firstNameInput, lastNameInput, ageInput, emailInput)) {
-            const name = `${firstNameInput.value} ${lastNameInput.value}`;
-            const age = ageInput.value;
-            const email = emailInput.value;
-            const editIndex = parseInt(editIndexInput.value);
-
-            if (name && age && email) {
-                if (isDuplicate(records, email) && editIndex === -1) {
-                    // alert('Student already exists.');
-                    Swal.fire({
-                        position: 'top',
-                        icon: 'error',
-                        title: 'Student already exists!',
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
-                    resetForm();
-                    return;
-                }
-
-                if (editIndex === -1) {
-                    // Add a new record.
-                    records.push({ name, age, email });
-                } else {
-                    // Update an existing record.
-                    records[editIndex] = { name, age, email };
-                    editIndexInput.value = -1;
-                }
-
-                localStorage.setItem('records', JSON.stringify(records));
-                resetForm();
-                displayRecords();
+        if (name && age && email) {
+            if (isDuplicate(records, email) && editIndex === -1) {
                 Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Record successful!',
+                    position: 'top',
+                    icon: 'error',
+                    title: 'Student already exists!',
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                resetForm();
+                return;
             }
+            if (editIndex === -1) {
+                // Add a new record.
+                records.push({ name, age, email });
+            } else {
+                // Update an existing record.
+                records[editIndex] = { name, age, email };
+                editIndexInput.value = -1;
+            }
+            localStorage.setItem('records', JSON.stringify(records));
+            resetForm();
+            displayRecords();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Record successful!',
+                showConfirmButton: false,
+                timer: 1500,
+            });
         }
     };
 

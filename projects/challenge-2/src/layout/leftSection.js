@@ -29,7 +29,7 @@ export default function leftSection() {
                         </div>
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary mb-2">Add Record</button>
+                        <button type="submit" class="btn btn-primary mb-2" id="submit-btn" disabled>Add Record</button>
                     </div>
                     <div class="col-12">
                         <input type="hidden" id="edit-index" value="-1">
