@@ -97,7 +97,7 @@ export function getElementsFromDom(elements) {
     // Add or Update a record
     const handleFormSubmit = event => {
         event.preventDefault();
-        
+
         const name = `${firstNameInput.value} ${lastNameInput.value}`;
         const age = ageInput.value;
         const email = emailInput.value;

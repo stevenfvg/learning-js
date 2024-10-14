@@ -13,8 +13,8 @@ export const observeIsValid = () => {
 
     const submitButton = document.getElementById('submit-btn');
     if (allValid) {
-        submitButton.removeAttribute('disabled'); // Enable the button
+        submitButton.removeAttribute('disabled'); // Enable the button.
     } else {
-        submitButton.setAttribute('disabled', 'true'); // Disable the button
+        submitButton.setAttribute('disabled', 'true'); // Disable the button.
     }
 };

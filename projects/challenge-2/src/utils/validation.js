@@ -25,7 +25,7 @@ const validateEmail = value => {
     return re.test(String(value));
 };
 
-const removeValidationWarning = (element) => {
+const removeValidationWarning = element => {
     element.classList.remove('is-invalid');
     element.classList.add('is-valid');
     element.nextElementSibling.classList.add('valid-feedback');
@@ -75,7 +75,9 @@ export const validateInputForm = event => {
     } else {
         // Capitalize the first/last name.
         if (id === 'first-name' || id === 'last-name') {
-            const formattedValue = elementValue.charAt(0).toUpperCase() + elementValue.slice(1).toLowerCase();
+            const formattedValue =
+                elementValue.charAt(0).toUpperCase() +
+                elementValue.slice(1).toLowerCase();
             element.value = formattedValue;
         }
         // Format the email field to lowercase letters.
@@ -87,7 +89,10 @@ export const validateInputForm = event => {
     }
 
     // Format specific validations.
-    if ((id === 'first-name' && !validateFirstNameOrLastName(elementValue)) || (id === 'last-name' && !validateFirstNameOrLastName(elementValue))) {
+    if (
+        (id === 'first-name' && !validateFirstNameOrLastName(elementValue)) ||
+        (id === 'last-name' && !validateFirstNameOrLastName(elementValue))
+    ) {
         element.classList.add('is-invalid');
         element.nextElementSibling.textContent = 'Only letters are allowed.';
         isValid = false;
