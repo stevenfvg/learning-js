@@ -63,3 +63,4 @@ console.log('Hello World!');
 | # | Content | Level | Code |
 | --- | --- | --- | --- |
 | `01` | Challenge 1 - DOM Manipulation and Conditionals | Basic | [view](/projects/challenge-1/) |
+| `02` | Challenge 2 - Functions and data persistence | Intermediate | [view](/projects/challenge-2/) |

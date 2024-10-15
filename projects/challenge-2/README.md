@@ -1,6 +1,6 @@
 <div align="center">
 
-# Challenge 2 - CRUD and data persistence
+# Challenge 2 - Functions and data persistence
 
 </div>
 
