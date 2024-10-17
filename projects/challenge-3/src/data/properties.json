@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Country house",
+        "description": "An ideal place to escape from the city.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260803/inmobiliaria/u2g9avyijqzzykmnn1uj.jpg",
+        "rooms": 2,
+        "m": 170
+    },
+    {
+        "id": 2,
+        "name": "Beach house",
+        "description": "Wake up to the sound of the ocean.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260804/inmobiliaria/dfmt60k5kcqrc3ahx7nr.avif",
+        "rooms": 2,
+        "m": 130
+    },
+    {
+        "id": 3,
+        "name": "City center house",
+        "description": "Have everything you need close to you.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260804/inmobiliaria/xrtcpjlvjm7fwzvjt9yw.jpg",
+        "rooms": 1,
+        "m": 80
+    },
+    {
+        "id": 4,
+        "name": "Mobile home",
+        "description": "Become a nomad without leaving your home.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260804/inmobiliaria/kbin3s7xnb1lsfoyu9dp.webp",
+        "rooms": 1,
+        "m": 6
+    },
+    {
+        "id": 5,
+        "name": "Apartment",
+        "description": "Everything looks better from above.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260804/inmobiliaria/ysv13qafeuvycza4uqlw.jpg",
+        "rooms": 3,
+        "m": 200
+    },
+    {
+        "id": 6,
+        "name": "Mansion",
+        "description": "Live a luxurious life in the mansion of your dreams.",
+        "src": "https://res.cloudinary.com/dozvvpar9/image/upload/v1729260804/inmobiliaria/zdi3uz7oagsvyj1gbirr.avif",
+        "rooms": 5,
+        "m": 500
+    }
+]
