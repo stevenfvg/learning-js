@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	`;
 
 	const elements = [
-		document.querySelector('#filter-form'),
+		// document.querySelector('#filter-form'),
 		document.querySelector('#rooms'),
 		document.querySelector('#from'),
 		document.querySelector('#to'),

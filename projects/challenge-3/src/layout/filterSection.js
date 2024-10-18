@@ -4,8 +4,8 @@ export default function filterSection() {
             <form class="row g-3 pt-4 needs-validation" id="filter-form" novalidate>
                 <div class"col-sm-12">
                     <label for="rooms" class="w-100 form-label fw-bold text-center">Number of rooms:</label>
-                    <input type="number" class="form-control w-25 m-auto" id="rooms" placeholder="1" min="1" required>
-                    <div class="invalid-feedback">
+                    <input type="number" class="form-control w-50 m-auto" id="rooms" placeholder="0" min="1" required>
+                    <div class="invalid-feedback text-center">
                         <!-- Custom validation message will be added here -->
                     </div>
                 </div>

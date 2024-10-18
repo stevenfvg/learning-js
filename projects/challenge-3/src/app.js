@@ -1,10 +1,12 @@
+import { validateInputForm } from './util/validation.js';
+
 // import data.
 import dataProperties from './data/properties.json';
 
 export function getElementsFromDom(elements) {
     // Getting HTML elements from the DOM.
     const [
-        filterForm,
+        // filterForm,
         roomsInput,
         fromInput,
         toInput,
@@ -39,5 +41,16 @@ export function getElementsFromDom(elements) {
         });
     };
 
+    // Function to load event listeners to interact with elements.
+    const loadEventListeners = () => {
+        // Validate each form field through events.
+        roomsInput.addEventListener('input', validateInputForm);
+        fromInput.addEventListener('input', validateInputForm);
+        toInput.addEventListener('input', validateInputForm);
+    };
+
+    // Initial display.
     showProperties();
+    // Load all the event listeners.
+    loadEventListeners();
 }
