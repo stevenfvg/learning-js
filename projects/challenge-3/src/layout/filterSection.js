@@ -1,7 +1,7 @@
 export default function filterSection() {
     return `
         <div class="col-md-2 col-sm-12 py-3">
-            <form class="row g-3 pt-4 needs-validation" novalidate>
+            <form class="row g-3 pt-4 needs-validation" id="filter-form" novalidate>
                 <div class"col-sm-12">
                     <label for="rooms" class="w-100 form-label fw-bold text-center">Number of rooms:</label>
                     <input type="number" class="form-control w-25 m-auto" id="rooms" placeholder="1" min="1" required>
@@ -27,7 +27,7 @@ export default function filterSection() {
                     </div>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary text-capitalize w-100 mx-auto" id="search-btn" disabled>
+                    <button type="button" class="btn btn-primary text-capitalize w-100 mx-auto" id="search-btn" disabled>
                         <i class="bi bi-search mr-1"></i>    
                         search
                     </button>

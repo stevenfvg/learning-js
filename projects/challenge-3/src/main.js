@@ -20,7 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		</div>
 	`;
 
-	const elements = [];
+	const elements = [
+		document.querySelector('#filter-form'),
+		document.querySelector('#rooms'),
+		document.querySelector('#from'),
+		document.querySelector('#to'),
+		document.querySelector('#total'),
+		document.querySelector('#properties')
+	];
 
 	getElementsFromDom(elements);
 });
